@@ -2,8 +2,8 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
-const dns = require('node:dns');
-const {parse: parseUrl} = require('node:url');
+const dns = require('dns');
+const {parse: parseUrl} = require('url');
 const app = express();
 
 const port = process.env.PORT || 3000;
