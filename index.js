@@ -46,6 +46,20 @@ app
         res.json({original_url: url, short_url : this.lastID});
       });
     });
+  })
+  .get('/api/shorturl/:short_url', (req, res) => {
+    const {short_url} = req.params;
+
+    db.all('SELECT url FROM shorts WHERE id = ?', [short_url], (err, rows) => {
+      if (err)
+        return res.status(500).json({message: 'Server error'});
+
+      const [row] = rows;
+
+      const {url} = row;
+
+      res.redirect(url);
+    })
   });
 
 app.listen(port, () => console.log(`Listen on port ${port}`));
