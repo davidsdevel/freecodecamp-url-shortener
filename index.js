@@ -34,7 +34,7 @@ app
 
     dns.lookup(hostname, err => {
       if (err)
-        return res.status(400).json({
+        return res.json({
           error: 'invalid url'
         });
 
