@@ -26,8 +26,7 @@ app
   .use('/public', express.static(`${process.cwd()}/public`));
 
 app
-  .get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'));
-
+  .get('/', (req, res) => res.sendFile(__dirname + '/views/index.html'))
   .post('/api/shorturl', (req, res) => {
     const {url} = req.body;
 
