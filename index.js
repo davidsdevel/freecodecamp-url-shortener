@@ -32,7 +32,7 @@ app
 
     const {hostname, protocol} = parseUrl(url);
 
-    if (!/https?:/.test(hostname))
+    if (!/https?:/.test(protocol))
       return res.json({
         error: 'invalid url'
       });
