@@ -30,6 +30,8 @@ app
   .post('/api/shorturl', (req, res) => {
     const {url} = req.body;
 
+    console.log(url);
+
     const {hostname} = parseUrl(url);
 
     dns.lookup(hostname, err => {
